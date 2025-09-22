@@ -1,0 +1,31 @@
+#input1 {
+  width: 80px;
+}
+#input2 {
+  width: 80px;
+}
+
+#result {
+  width: 90px;
+  height: 20px;
+  border-style: solid;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.operator-container {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  width: 90px;
+}
+
+.select {
+  width: 90px;
+}

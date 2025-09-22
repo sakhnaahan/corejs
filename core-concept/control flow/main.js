@@ -62,3 +62,15 @@ while (count <= 5) {
   console.log("Count:", count);
   count++;
 }
+
+// ✅ Summary
+
+// Ternary → one-line if/else.
+
+// If/Else → general decision making.
+
+// Switch → multiple choices, one value.
+
+// For → repeat known times.
+
+// While → repeat until condition false.
