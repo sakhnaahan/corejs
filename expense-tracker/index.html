@@ -8,73 +8,102 @@
   </head>
   <body>
     <div class="container">
-      <h1>Expense Tracker</h1>
-      <!-- ? Income section -->
+      <h1>💰 Expense Tracker</h1>
+
       <div class="section">
-        <h2>Income</h2>
+        <h2>💵 Income</h2>
         <div class="input-group">
           <label for="income-description">Description</label>
-          <input type="text" id="income-description" placeholder="Salary" />
+          <input
+            type="text"
+            id="income-description"
+            placeholder="e.g. Salary, Freelance, Business"
+          />
         </div>
         <div class="input-group">
-          <label for="income-amount">Amount ($)</label>
-          <input type="number" id="income-amount" placeholder="1000" />
+          <label for="income-amount">Amount (₦)</label>
+          <input
+            type="number"
+            id="income-amount"
+            placeholder="e.g. 100000"
+            min="0"
+            step="0.01"
+          />
         </div>
         <div class="button-group">
-          <button onclick="addIncome()">Add Income</button>
+          <button onclick="addIncome()">➕ Add Income</button>
         </div>
       </div>
-      <!-- ? Expense section -->
+
       <div class="section">
-        <h2>Expenses</h2>
+        <h2>💸 Expenses</h2>
         <div class="input-group">
           <label for="expense-description">Description</label>
-          <input type="text" id="expense-description" placeholder="Rent" />
+          <input
+            type="text"
+            id="expense-description"
+            placeholder="e.g. Rent, Food, Transport"
+          />
         </div>
         <div class="input-group">
           <label for="expense-category">Category</label>
           <select id="expense-category">
-            <option value="Housing">Housing</option>
-            <option value="Food">Food</option>
-            <option value="Transportation">Transportation</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Others">Others</option>
+            <option value="Housing">🏠 Housing</option>
+            <option value="Food">🍽️ Food</option>
+            <option value="Transportation">🚗 Transportation</option>
+            <option value="Entertainment">🎬 Entertainment</option>
+            <option value="Healthcare">🏥 Healthcare</option>
+            <option value="Education">📚 Education</option>
+            <option value="Shopping">🛍️ Shopping</option>
+            <option value="Others">📋 Others</option>
           </select>
         </div>
         <div class="input-group">
-          <label for="expense-amount">Amount ($)</label>
-          <input type="number" id="expense-amount" placeholder="50000" />
+          <label for="expense-amount">Amount (₦)</label>
+          <input
+            type="number"
+            id="expense-amount"
+            placeholder="e.g. 50000"
+            min="0"
+            step="0.01"
+          />
         </div>
         <div class="button-group">
-          <button onclick="addExpense()">Add Expense</button>
+          <button onclick="addExpense()">➕ Add Expense</button>
         </div>
       </div>
-      <!-- ? Transaction history -->
+
       <div class="table-container">
-        <h2>Transaction History</h2>
+        <h2>📊 Transaction History</h2>
         <table>
           <thead>
             <tr>
               <th>Description</th>
               <th>Category</th>
-              <th>Amount $</th>
+              <th>Amount (₦)</th>
               <th>Type</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody id="transaction-history"></tbody>
+          <tbody id="transaction-history">
+            <tr class="empty-state">
+              <td colspan="5">
+                No transactions yet. Add your first income or expense!
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <!-- ? Budget summary -->
+
       <div class="summary">
-        <h2>Budget Summary</h2>
-        <p>Total Income: $<span id="total-income">0</span></p>
-        <p>Total Expenses: $<span id="total-expenses">0</span></p>
-        <p>Balance: $<span id="balance">0</span></p>
+        <h2>📈 Budget Summary</h2>
+        <p>Total Income: ₦<span id="total-income">0</span></p>
+        <p>Total Expenses: ₦<span id="total-expenses">0</span></p>
+        <p>Balance: ₦<span id="balance" class="positive">0</span></p>
       </div>
-      <!-- ? Clear all button -->
+
       <div class="clear-button-group">
-        <button onclick="clearAll()">Clear All</button>
+        <button onclick="clearAll()">🗑️ Clear All Data</button>
       </div>
     </div>
     <script src="main.js"></script>

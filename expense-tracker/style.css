@@ -1,4 +1,3 @@
-/* * Styling the Body */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -7,10 +6,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* * Styling the Container */
 .container {
   background-color: white;
   padding: 20px;
@@ -20,7 +20,6 @@ body {
   width: 100%;
 }
 
-/* * Styling the Headings */
 h1,
 h2 {
   color: #333;
@@ -35,7 +34,13 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* * Styling the Input Groups */
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
 .input-group {
   margin-bottom: 15px;
 }
@@ -44,11 +49,12 @@ h2 {
   display: block;
   margin-bottom: 5px;
   color: #555;
+  font-weight: bold;
 }
 
 .input-group input,
 .input-group select {
-  width: calc(100% - 10px);
+  width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -56,71 +62,87 @@ h2 {
   font-size: 16px;
 }
 
-/* * Styling the Buttons */
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #ff69b4;
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+}
+
 .button-group button,
 .clear-button-group button {
-  background-color: #008080;
+  background-color: #ff69b4;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.3s;
+  width: 100%;
+  transition: background-color 0.3s;
 }
 
 .button-group button:hover,
 .clear-button-group button:hover {
-  background-color: #004c4c;
+  background-color: #ff1493;
 }
 
-/* * Styling the Transiction History Table */
 .table-container {
   margin-top: 20px;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  background-color: white;
 }
 
 th,
 td {
   text-align: left;
-  padding: 10px;
+  padding: 12px;
   border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #008080;
+  background-color: #ff69b4;
   color: white;
+  font-weight: bold;
 }
 
 td {
   color: #333;
 }
 
+tr:hover {
+  background-color: #f5f5f5;
+}
+
 td button {
-  background-color: #008080;
+  background-color: #ff1493;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 td button:hover {
-  background-color: #008080;
+  background-color: #c71585;
 }
 
-/* * Styling the Summary Section */
 .summary {
-  background-color: #66b2b2;
-  padding: 15px;
+  background: linear-gradient(135deg, #ffb3ff, #ff99ff);
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
   color: #333;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .summary p {
@@ -129,5 +151,43 @@ td button:hover {
 }
 
 .summary span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.clear-button-group {
+  margin-top: 20px;
+}
+
+.clear-button-group button {
+  background-color: #dc3545;
+}
+
+.clear-button-group button:hover {
+  background-color: #c82333;
+}
+
+.positive {
+  color: #28a745 !important;
+}
+
+.negative {
+  color: #dc3545 !important;
+}
+
+.empty-state {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+.income-type {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.expense-type {
+  color: #dc3545;
   font-weight: bold;
 }
