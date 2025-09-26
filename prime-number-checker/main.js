@@ -1,6 +1,8 @@
+const input = document.querySelector("#input");
+const res = document.querySelector("#result");
+
 function cPrime() {
-  const n = parseInt(document.querySelector("#input").value);
-  const res = document.querySelector("#result");
+  const n = parseInt(input.value);
 
   if (isNaN(n) || n <= 1) {
     res.textContent = "Please enter a number greater than 1";
