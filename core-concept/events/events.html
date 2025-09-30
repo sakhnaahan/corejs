@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      button {
+        border: 1px solid black;
+        padding: 5px 10px;
+      }
+      input {
+        padding: 5px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Counter</h2>
+    <input type="number" id="numInput" value="0" />
+    <button id="incBtn">Increase</button>
+    <button id="decBtn">Decrease</button>
+    <p id="counter">0</p>
+
+    <h2>Background Color</h2>
+    <input type="text" id="colorInput" placeholder="Enter a color" />
+    <button id="colorBtn">Set Background</button>
+    <script>
+      const numInput = document.querySelector("#numInput");
+      const incBtn = document.querySelector("#incBtn");
+      const decBtn = document.querySelector("#decBtn");
+      const counter = document.querySelector("#counter");
+
+      const colorInput = document.querySelector("#colorInput");
+      const colorBtn = document.querySelector("#colorBtn");
+
+      let count = 0;
+
+      incBtn.addEventListener("click", () => {
+        count = count + 1;
+        counter.textContent = count;
+      });
+
+      decBtn.addEventListener("click", function () {
+        count = count - 1;
+        counter.textContent = count;
+      });
+
+      colorBtn.addEventListener("click", () => {
+        document.body.style.background = colorInput.value;
+      });
+
+      numInput.addEventListener("keydown", (e) => {
+        counter.textContent = e.key;
+      });
+    </script>
+  </body>
+</html>
+
+<!-- ? Syntax  -->
+<!-- ?  element.addEventListener("eventName", function) -->
+<!-- element → the thing on the page (like a button or input)
+"eventName" → the action we’re waiting for ("click", "keydown", etc.)
+function → what we want to do when it happens -->
+
+<!-- ? Example: A button click -->
+<!-- html
+<button?>Click Me</button?
+<p id="output"></p> -->
+
+<!-- JS
+const button = document.getElementById("myBtn");
+const output = document.getElementById("output");
+
+button.addEventListener("click", function () {
+  output.textContent = "Button was clicked!";
+}); -->
+
+<!--
+* What happens here?
+* The browser listens for a "click" on myBtn.
+* When the click happens → it runs the function and changes the text.
+-->
+
+<!-- ? Common Events You’ll See a Lot -->
+
+<!--
+"click" → when user clicks
+
+"mouseover" → when mouse goes over
+
+"mouseout" → when mouse leaves
+
+"keydown" → when pressing a key
+
+"keyup" → when releasing a key
+
+"input" → when typing inside an input box
+
+"submit" → when submitting a form
+
+"load" → when page fully loads
+-->
